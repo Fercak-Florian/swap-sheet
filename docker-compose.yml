@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+    nginx:
+      image: nginx:latest
+      build:
+        context: ./nginx/build
+        dockerfile: Dockerfile
+      volumes:
+        - ./:/var/www/project/:cached
+      ports:
+        - "8081:80"
+      networks:
+        - symfony
