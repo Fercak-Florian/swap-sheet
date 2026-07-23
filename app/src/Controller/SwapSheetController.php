@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\SwapSheet;
 use App\Form\SwapSheetType;
 use Dompdf\Dompdf;
+use Dompdf\Options;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -30,7 +31,15 @@ final class SwapSheetController extends AbstractController
 
             // ... perform some action -> generate PDF
             // instantiate and use the dompdf class
-            $dompdf = new Dompdf();
+            $options = new Options();
+
+            $options->set('isRemoteEnabled', true);
+
+            $options->setChroot(
+                $this->getParameter('kernel.project_dir').'/public'
+            );
+
+            $dompdf = new Dompdf($options);
 
             $html = $this->renderView('pdf/swap_sheet.html.twig', [
                 'swapSheet' => $swapSheet,
