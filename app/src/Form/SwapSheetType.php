@@ -18,42 +18,26 @@ class SwapSheetType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('diskSize',ChoiceType::class, [
-                'label' => 'Taille Disque',
+            ->add('newComputerTattoo', TextType::class)
+            ->add('tspName', ChoiceType::class, [
                 'choices'  => [
-                    '256 Go' => '256 Go',
-                    '512 Go' => '512 Go',
-                    'Inconnu' => '',
-                ],
-            ])
-            ->add('newModel', TextType::class, [
-                'label' => 'Modèle',
-            ])
-            ->add('bios', TextType::class, [
-                'label' => 'BIOS',
+                    'FERCAK Florian' => 'LACOUR Vincent',
+                    'LACOUR Vincent' => 'FERCAK Florian',
+                    'BOUET Pascal' => 'BOUET Pascal',
+                ]
             ])
 //            ->add('masterDate', DateType::class, [
 //                'label' => 'Date Master',
 //            ])
-            ->add('newSerialNumber', TextType::class)
-            ->add('tattooNumber', TextType::class)
-            ->add('tspName', ChoiceType::class, [
-                'choices'  => [
-                    'LACOUR Vincent' => 'LACOUR Vincent',
-                    'FERCAK Florian' => 'FERCAK Florian',
-                    'BOUET Pascal' => 'BOUET Pascal',
-                ]
-            ])
             ->add('userName', TextType::class)
             ->add('cuid', TextType::class)
             ->add('incidentNumber', TextType::class)
 //            ->add('allocationDate', DateType::class)
             ->add('comment', TextareaType::class)
-            ->add('oldComputer', TextType::class)
-            ->add('oldModel', TextType::class)
-            ->add('oldSerialNumber', TextType::class)
+            ->add('oldComputerTattoo', TextType::class)
+            ->add('oldComputerModel', TextType::class)
             ->add('symptom', TextType::class)
-            ->add('Print', SubmitType::class)
+            ->add('Imprimer', SubmitType::class)
         ;
     }
 

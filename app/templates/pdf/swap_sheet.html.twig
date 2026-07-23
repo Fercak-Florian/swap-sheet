@@ -28,20 +28,20 @@
         </div>
 
         <div class="item">
-            <div class="inside">N° de Tatouage : {{ swapSheet.newComputer }}</div>
+            <div class="inside">N° de Tatouage : {{ swapSheet.newComputerTattoo }}</div>
         </div>
 
         <div class="item">
-            <div class="inside">Nom du TSP : </div>
+            <div class="inside">Nom du TSP : {{ swapSheet.tspName }}</div>
         </div>
 
         <div class="user">
-            <div class="inside">Utilisateur : </div>
-            <div class="inside">Code Ident : </div>
+            <div class="inside">Utilisateur : {{ swapSheet.userName }}</div>
+            <div class="inside">Code Ident : {{ swapSheet.cuid }}</div>
         </div>
 
         <div class="item">
-            <div class="inside">N° DMI / INC / MYI : </div>
+            <div class="inside">N° DMI / INC / MYI : {{ swapSheet.incidentNumber }} </div>
         </div>
 
         <div class="item">
@@ -54,9 +54,9 @@
 
         <footer>
             <div>A mettre dans le PC HS</div>
-            <div>Ancien pc : {{ swapSheet.oldComputer }} </div>
-            <div>Modèle : </div>
-            <div>Symptôme : </div>
+            <div>Ancien pc : {{ swapSheet.oldComputerTattoo }} </div>
+            <div>Modèle : {{ swapSheet.oldComputerModel }}</div>
+            <div>Symptôme : {{ swapSheet.symptom }} </div>
         </footer>
     </div>
 
