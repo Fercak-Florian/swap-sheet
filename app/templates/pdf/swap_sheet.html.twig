@@ -1,25 +1,64 @@
-<h1>Fiche de suivi 26E</h1>
-<p>Taille Disque : </p>
-<p>Modèle : </p>
-<p>BIOS : </p>
-<p>Date Master : </p>
+{% extends 'base.html.twig' %}
 
-<p>N° de série :</p>
-<p>N° de Tatouage : {{ swapSheet.newComputer }} </p>
-<p>Nom du TSP : </p>
+{% block title %}SwapSheet Application{% endblock %}
 
-<p>Utilisateur : </p>
-<p>Code Ident : </p>
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/pdf.css') }}">
+{% endblock %}
 
-<p>N° DMI / INC / MYI : </p>
-<p>Date de remise : </p>
-<p>Observations : </p>
+{% block body %}
+    <style>
+        /*.example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }*/
+        /*.example-wrapper code { background: #F5F5F5; padding: 2px 6px; }*/
+    </style>
 
-<p>Statut 26E : </p>
-<p>Auto - Manuelle</p>
+    <div>
+        <header>
+            Fiche de suivi 26E
+        </header>
+        <div class="sub-header">
+            <div class="infos">
+                <div>Taille Disque : </div>
+                <div>Modèle : </div>
+            </div>
+            <div class="infos">
+                <div>BIOS : </div>
+                <div>Date Master : </div>
+            </div>
+        </div>
 
-<p>A mettre dans le PC HS</p>
-<p>Ancien pc : {{ swapSheet.oldComputer }} </p>
-<p>Modèle : </p>
-<p>N° de série : </p>
-<p>Symptôme : </p>
+        <div class="item">
+            <div class="inside">N° de Tatouage : {{ swapSheet.newComputer }}</div>
+        </div>
+
+        <div class="item">
+            <div class="inside">Nom du TSP : </div>
+        </div>
+
+        <div class="user">
+            <div class="inside">Utilisateur : </div>
+            <div class="inside">Code Ident : </div>
+        </div>
+
+        <div class="item">
+            <div class="inside">N° DMI / INC / MYI : </div>
+        </div>
+
+        <div class="item">
+            <div class="inside">Date de remise : </div>
+        </div>
+
+        <label for="story">Observations&nbsp;:</label>
+        <textarea id="story" rows="10">
+        </textarea>
+
+        <footer>
+            <div>A mettre dans le PC HS</div>
+            <div>Ancien pc : {{ swapSheet.oldComputer }} </div>
+            <div>Modèle : </div>
+            <div>Symptôme : </div>
+        </footer>
+    </div>
+
+    </div>
+{% endblock %}
