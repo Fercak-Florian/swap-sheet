@@ -10,11 +10,18 @@
 
     <div class="example-wrapper">
         <h1 class="text-primary fw-bold">Hello {{ controller_name }}</h1>
-
-        {{ form(form, {'attr': {
+        {{ form_start(form, {'attr': {
             'data-turbo': 'false',
             'novalidate': 'novalidate'
         }}) }}
-
+            {{ form_errors(form) }}
+                {{ form_row(form.newComputerTattoo, {'label': 'Tatouage du nouvel ordinateur : '}) }}
+                {{ form_row(form.tspName, {'label': 'Nom du TSP : '}) }}
+                {{ form_row(form.userName, {'label': 'Utilisateur : '}) }}
+                {{ form_row(form.cuid, {'label': 'Code Ident : '}) }}
+                {{ form_row(form.incidentNumber, {'label': 'Numero d"incident : '}) }}
+                {{ form_row(form.oldComputerTattoo, {'label': 'Tatouage de l"ancien ordinateur  : '}) }}
+            {{ form_rest(form) }}
+        {{ form_end(form) }}
     </div>
 {% endblock %}

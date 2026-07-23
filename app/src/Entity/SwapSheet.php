@@ -6,18 +6,7 @@ use DateTimeInterface;
 
 class SwapSheet
 {
-    public function __construct()
-    {
-        $this->masterDate = new \DateTimeImmutable("now");
-    }
-
-    private ?string $diskSize = null;
-    private ?string $newModel = null;
-    private ?string $bios = null;
-//    private \DateTimeImmutable $masterDate;
-    private ?string $newSerialNumber = null;
-    private ?string $newComputer = null;
-    private ?string $tattooNumber = null;
+    private ?string $newComputerTattoo = null;
     private ?string $tspName = null;
     private ?string $userName = null;
     private ?string $cuid = null;
@@ -25,66 +14,20 @@ class SwapSheet
     private ?string $incidentNumber = null;
 //    private \DateTimeImmutable $allocationDate;
     private ?string $comment = null;
-    private ?string $oldComputer = null;
+    private ?string $oldComputerTattoo = null;
 
-    public function getDiskSize(): ?string
+    private ?string $oldComputerModel = null;
+
+    private ?string $symptom = null;
+
+    public function getNewComputerTattoo(): ?string
     {
-        return $this->diskSize;
+        return $this->newComputerTattoo;
     }
 
-    public function setDiskSize(?string $diskSize): void
+    public function setNewComputerTattoo(?string $newComputerTattoo): void
     {
-        $this->diskSize = $diskSize;
-    }
-
-    public function getNewModel(): ?string
-    {
-        return $this->newModel;
-    }
-
-    public function setNewModel(?string $newModel): void
-    {
-        $this->newModel = $newModel;
-    }
-
-    public function getBios(): ?string
-    {
-        return $this->bios;
-    }
-
-    public function setBios(?string $bios): void
-    {
-        $this->bios = $bios;
-    }
-
-    public function getMasterDate(): DateTimeInterface
-    {
-        return $this->masterDate;
-    }
-
-    public function setMasterDate(DateTimeInterface $masterDate): void
-    {
-        $this->masterDate = $masterDate;
-    }
-
-    public function getNewSerialNumber(): ?string
-    {
-        return $this->newSerialNumber;
-    }
-
-    public function setNewSerialNumber(?string $newSerialNumber): void
-    {
-        $this->newSerialNumber = $newSerialNumber;
-    }
-
-    public function getTattooNumber(): ?string
-    {
-        return $this->tattooNumber;
-    }
-
-    public function setTattooNumber(?string $tattooNumber): void
-    {
-        $this->tattooNumber = $tattooNumber;
+        $this->newComputerTattoo = $newComputerTattoo;
     }
 
     public function getTspName(): ?string
@@ -137,24 +80,14 @@ class SwapSheet
         $this->allocationDate = $allocationDate;
     }
 
-    public function getOldModel(): ?string
+    public function getOldComputerModel(): ?string
     {
-        return $this->oldModel;
+        return $this->oldComputerModel;
     }
 
-    public function setOldModel(?string $oldModel): void
+    public function setOldComputerModel(?string $oldModel): void
     {
-        $this->oldModel = $oldModel;
-    }
-
-    public function getOldSerialNumber(): ?string
-    {
-        return $this->oldSerialNumber;
-    }
-
-    public function setOldSerialNumber(?string $oldSerialNumber): void
-    {
-        $this->oldSerialNumber = $oldSerialNumber;
+        $this->oldComputerModel = $oldModel;
     }
 
     public function getSymptom(): ?string
@@ -176,31 +109,15 @@ class SwapSheet
     {
         $this->comment = $comment;
     }
-    private ?string $oldModel = null;
 
-    private ?string $oldSerialNumber = null;
-    private ?string $symptom = null;
 
-    public function getOldComputer(): ?string
+    public function getOldComputerTattoo(): ?string
     {
-        return $this->oldComputer;
+        return $this->oldComputerTattoo;
     }
-
-    public function setOldComputer(string $oldComputer): static
+    public function setOldComputerTattoo(string $oldComputerTattoo): static
     {
-        $this->oldComputer = $oldComputer;
-
-        return $this;
-    }
-
-    public function getNewComputer(): ?string
-    {
-        return $this->newComputer;
-    }
-
-    public function setNewComputer(string $newComputer): static
-    {
-        $this->newComputer = $newComputer;
+        $this->oldComputerTattoo = $oldComputerTattoo;
 
         return $this;
     }

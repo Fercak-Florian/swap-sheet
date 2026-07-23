@@ -17,8 +17,8 @@ final class SwapSheetController extends AbstractController
     public function index(Request $request): Response
     {
         $swapSheet = new SwapSheet();
-        $swapSheet->setOldComputer("odlOR");
-        $swapSheet->setNewComputer("newOR");
+        $swapSheet->setOldComputerTattoo("odlOR");
+        $swapSheet->setNewComputerTattoo("newOR");
 
         $form = $this->createForm(SwapSheetType::class, $swapSheet);
 
